@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div>
+    <div className='flex mt-6 p-6 bg-gray-500 text-white rounded-lg'>
       {/* <Hero imgUrl={homeImageSrc} altTxt='Home Image' content='Professional Cloud Hosting' /> */}
-      <Button type='primary'>Button</Button>
+      {/* <Button type='primary'>Button</Button> */}
+      @children
     </div>
   )
 }
