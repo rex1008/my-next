@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inder } from "next/font/google";
 import "./globals.css";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 const inder = Inder({ subsets: ["latin"], weight: "400" });
 
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inder.className}>
-        {children}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
