@@ -1,8 +1,16 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 
 export function middleware (request: NextRequest) {
   console.log("intercepting path", request.nextUrl.pathname)
+
+  // 所有的非登录页请求，判断是否携带token，以及校验token的有效性
+  if (request.nextUrl.pathname !== '/login') {
+    const token = request.cookies.get("token")?.value
+    if(!token || token !== "asfafasfasfahahfyasfangasangjasgiasdgnnnajdgioyeriuiqwehnvnadf") {
+      return NextResponse.redirect(new URL('/login', request.url))
+    }
+  }
 }
 
 export const config = {
